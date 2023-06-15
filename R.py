@@ -1,0 +1,1 @@
+VERSION = 'copied 1.0'

@@ -2,9 +2,11 @@ from ui.Forms.pyuic.Ui_MainForm import Ui_MainForm
 from PyQt5.QtWidgets import QWidget
 from PyQt5.QtWidgets import QApplication, QSystemTrayIcon, QMenu, QAction, QWidget, QAbstractItemView, QTableWidgetItem, QHeaderView
 from PyQt5.QtGui import QIcon, QPixmap
-import copied
+# import copied
+import Toast
 import base64
 import re
+import R
 
 from ClipboardListener import ClipboardListener
 
@@ -72,7 +74,7 @@ class MainForm(QWidget):
     def run_listen(self):
         # 创建剪贴板监听器和 Toast 对象
         self.listener = ClipboardListener()
-        toast = copied.Toast("{} 已启动".format(copied.VERSION))
+        toast = Toast.Toast("{} 已启动".format(R.VERSION))
 
         # 监听剪贴板变化
         self.listener.textChanged.connect(
