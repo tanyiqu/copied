@@ -1,13 +1,20 @@
 import time
 import pyperclip
 from pynput.keyboard import Key, Controller
+import os
 
 keyboard = Controller()
+
+def notify(mstr='Hello'):
+    os.system(f"osascript -e 'display notification \"{mstr}\"\'")
+
+
 
 def on_clipboard_change():
     text_content = pyperclip.paste()
     # 处理剪贴板文本内容
     print(text_content)
+    notify(text_content)
     # 发送键盘事件
     keyboard.press(Key.cmd)
     keyboard.press('v')
@@ -22,3 +29,4 @@ while True:
         on_clipboard_change()
         previous_content = current_content
     time.sleep(0.5)
+

@@ -1,1 +1,1 @@
-VERSION = 'copied 1.0'
+VERSION = 'copied 2.0'
