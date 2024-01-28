@@ -1,0 +1,1 @@
+qt.qpa.fonts: Populating font family aliases took 563 ms. Replace uses of missing font family "Microsoft YaHei" with one that exists to avoid this cost. 
